@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>한자 테스트</title>
+  <link rel="stylesheet" href="css/character.css">
+  <link rel="stylesheet" href="css/test-start.css">
+</head>
+<body>
+ <div class="container">
+    <h1>🧪 한자 테스트</h1>
+    <div id="question-box" class="display-section">
+      <h3 id="question-type">문제 유형</h3>
+      <div class="hanja-text" id="question-content">⏳</div>
+      <div id="choices" class="button-group"></div>
+      <p id="timer">⏱ 남은 시간: <span id="time-left">20</span>초</p>
+    </div>
+        <div class="button-group">
+      <button class="btn-primary" onclick="nextQuestion()">다음 문제</button>
+    </div>
+  </div>
+
+  <!-- 점수 모달 -->
+  <div id="result-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>🎉 테스트 완료!</h2>
+      <p id="final-score"></p>
+      <button onclick="location.href='index.html'" class="btn-primary">메인으로</button>
+    </div>
+  </div>
+
+  <script src="js/test.js"></script>
+</body>
+</html>

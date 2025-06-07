@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>급수별 랜덤 한자 퀴즈</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/character.css"> <!-- 경로 수정됨 -->
+</head>
+<body>
+  <div class="container">
+    <h1>📚 한 글자 공부</h1>
+    <div class="level-section">
+      <label for="level">🎯 급수 선택</label>
+      <select id="level">
+        <option value="8">8급</option>
+        <option value="7">7급</option>
+        <option value="6">6급</option>
+        <option value="준5">준5급</option> <!-- 준5급 파일 대응 -->
+        <option value="5">5급</option>
+      </select>
+    </div>
+
+    <div class="button-group">
+      <button class="btn-primary" onclick="showRandomHanja()" id="hanjaBtn">
+        🎲 한자 보기
+      </button>
+      <button class="btn-secondary" onclick="showMeaning()" id="meaningBtn" disabled>
+        💡 뜻 보기
+      </button>
+    </div>
+
+    <div class="display-section">
+      <div class="hanja-display">
+        <h3>한자</h3>
+        <div class="hanja-text" id="hanjaDisplay">📖</div>
+      </div>
+      
+      <div class="meaning-display">
+        <h3>음 / 훈</h3>
+        <div class="meaning-text" id="meaningDisplay">🤔</div>
+      </div>
+    </div>
+    <button class="btn-back" onclick="window.location.href='index.html'">⬅ 뒤로 가기</button>
+  </div>
+
+  <!-- JS 연결 -->
+  <script src="js/character.js"></script>
+</body>
+</html>

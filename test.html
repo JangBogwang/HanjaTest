@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한자 테스트 시작</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/character.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🧪 한자 테스트 시작</h1>
+    <div class="level-section">
+      <label for="level">급수를 선택하세요:</label>
+      <select id="level">
+        <option value="8">8급</option>
+        <option value="7">7급</option>
+        <option value="6">6급</option>
+        <option value="준5">준5급</option>
+        <option value="5">5급</option>
+      </select>
+    </div>
+    <button class="btn-primary" onclick="startTest()">테스트 시작하기</button>
+  </div>
+
+  <script>
+    function startTest() {
+      const level = document.getElementById('level').value;
+      const levelNumber = document.getElementById('level').selectedIndex + 1;
+      // 예: test.html?level=5&no=3
+      window.location.href = `test-start.html?level=${level}&no=${levelNumber}`;
+    }
+  </script>
+</body>
+</html>
