@@ -84,7 +84,7 @@
     }
 
     function startTimer() {
-      timeLeft = 20;
+      timeLeft = 10;
       document.getElementById('time-left').textContent = timeLeft;
       timer = setInterval(() => {
         timeLeft--;
