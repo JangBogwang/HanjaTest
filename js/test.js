@@ -6,7 +6,7 @@
     let questions = [];
     let current = 0;
     let timer = null;
-    let timeLeft = 20;
+    let timeLeft = 15;
     let score = 0;
 
     function shuffle(array) {
@@ -84,7 +84,7 @@
     }
 
     function startTimer() {
-      timeLeft = 10;
+      timeLeft = 15;
       document.getElementById('time-left').textContent = timeLeft;
       timer = setInterval(() => {
         timeLeft--;
