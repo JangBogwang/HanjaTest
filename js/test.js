@@ -131,9 +131,22 @@
     function showResult() {
       const modal = document.getElementById('result-modal');
       const scoreText = document.getElementById('final-score');
+      const resultImage = document.getElementById('result-image');
+
+      // 여기서 점수는 전역에서 누적된 값(score)을 그대로 사용
       scoreText.textContent = `당신의 점수는 ${score} / 100입니다.`;
+
+      if (score >= 80) {
+        resultImage.src = 'image/happy.png';
+      } else if (score < 50) {
+        resultImage.src = 'image/angry.png';
+      } else {
+        resultImage.src = 'image/copybaru.png';
+      }
+
       modal.classList.remove('hidden');
     }
+
 
     window.onload = () => {
       loadQuestions();
