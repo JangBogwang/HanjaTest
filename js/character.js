@@ -35,7 +35,6 @@ async function showRandomHanja() {
   hanjaBtn.disabled = true;
 
   try {
-    // 필요한 파일 모두 불러오기 (선택급수 이상)
     const selected = parseInt(level.replace(/[^0-9]/g, ''));
     for (let l = selected; l <= 8; l++) {
       const fileLevel = l.toString();
@@ -55,8 +54,9 @@ async function showRandomHanja() {
     const parts = randomLine.split(/\t+|\s{2,}/).filter(part => part.trim());
     if (parts.length < 2) throw new Error('형식 오류');
 
-    const [hanja, meaning] = [parts[0], parts[1]];
-    currentPair = { hanja, meaning };
+    const [hanja, meaning, reading] = parts;
+    const combinedMeaning = reading ? `${meaning} (${reading})` : meaning;
+    currentPair = { hanja, meaning: combinedMeaning };
 
     hanjaDisplay.className = 'hanja-text fade-in pulse';
     hanjaDisplay.textContent = hanja;
@@ -84,6 +84,7 @@ function showMeaning() {
     document.getElementById('meaningBtn').disabled = true;
   }
 }
+
 
 // 키보드 단축키
 document.addEventListener('keydown', function(event) {
